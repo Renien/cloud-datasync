@@ -3,6 +3,8 @@
 # aws authentication function
 aws_authentication() {
 
+local AWS_CONF_FILE=$1
+
 if [ -f "$AWS_CONF_FILE" ]; then
   
 	echo "$AWS_CONF_FILE found.."
