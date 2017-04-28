@@ -2,7 +2,7 @@
 
 scripts_root="../modules"
 
-source $scripts_root/datePatternValidation.sh
+source "$scripts_root/datePatternValidation.sh"
 
 # correct pattern
 isDate 12345678

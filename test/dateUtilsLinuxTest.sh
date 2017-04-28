@@ -2,7 +2,7 @@
 
 scripts_root="../modules"
 
-source $scripts_root/dateUtilsLinux.sh
+source "$scripts_root/dateUtilsLinux.sh"
 
 stepForNextDay 1
 
