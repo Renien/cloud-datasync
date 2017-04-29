@@ -34,5 +34,25 @@ elif [ $CLOUD_TYPE == "GCP" ]; then
 fi
 
 # Run the incremental copy/batch copy 
+if [ $IS_INCREMENTAL == "true" ]; then
+	echo "Incremental copy started for partitioned data.."
+	
+	# Consider the vertical partioned data
+	if [ -z "$period" ]; then
+		echo "Period arg not found.. So consider date range [" $startDate "-" $endDate "]"
+		startOffSet=$(daysOffset $startDate)
+		endOffSet=$(daysOffset $endDate)
+	else
+		echo "Period arg found [" $period "days ago]"
+		startOffSet=$((-1 * ${period}))
+    	endOffSet=-1
+	fi
+
+	echo "startOffset=" $startOffSet
+    echo "endOffset=" $endOffSet
+
+else
+	echo "Copy folder started.."
 
 
+fi
