@@ -21,18 +21,6 @@ elif [ $OS_TYPE == "Darwin" ]; then
 	source "${scripts_root}/dateUtilsMac.sh"
 fi
 
-# Load the authendication based cloud service 
-if [ $CLOUD_TYPE == "AWS" ]; then
-	echo "It's for AWS S3 bucket.."
-	
-	source "${scripts_root}/authentication.sh"
-	echo "AWS_CONF_FILE path :" $AWS_CONF_FILE 
-	aws_authentication $AWS_CONF_FILE
-
-elif [ $CLOUD_TYPE == "GCP" ]; then
-	echo "It's for GCP Storage.."
-fi
-
 # Run the incremental copy/batch copy 
 if [ $IS_INCREMENTAL == "true" ]; then
 	echo "Incremental copy started for partitioned data.."
@@ -49,10 +37,11 @@ if [ $IS_INCREMENTAL == "true" ]; then
 	fi
 
 	echo "startOffset=" $startOffSet
-    echo "endOffset=" $endOffSet
+  	echo "endOffset=" $endOffSet
 
+	source "${scripts_root}/processPartitioned.sh"
 else
 	echo "Copy folder started.."
 
-
+	source "${scripts_root}/processBulk.sh"
 fi
