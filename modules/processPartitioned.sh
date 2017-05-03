@@ -22,19 +22,25 @@ fi
 
 for ((i = startOffSet; i <= endOffSet; i++)) do
 	noDays=$i
-	nextDay=$(stepForNextDay $noDays)
+	nextDay=$(stepForNextDay $noDays $DATESEPARATOR)
 
 	if [ $CLOUD_TYPE == "AWS" ]; then
 
 		# AWS incremental copy command
-		echo $SOURCE$PARTIONDIRECTORY=$nextDay $TARGET$PARTIONDIRECTORY=$nextDay $EXTRA_DISTCP_OPTIONS
+		echo "Source: " $SOURCE$PARTIONDIRECTORY$nextDay 
+		echo "Target: " $TARGET$PARTIONDIRECTORY$nextDay 
+		echo "Additional options: " $EXTRA_DISTCP_OPTIONS
 
 		#aws s3 cp $SOURCE$PARTIONDIRECTORY=$nextDay $TARGET$PARTIONDIRECTORY=$nextDay $EXTRA_DISTCP_OPTIONS
   
 	elif [ $CLOUD_TYPE == "GCP" ]; then
 
-		# GCP copy command
-		echo $SOURCE$PARTIONDIRECTORY=$nextDay $TARGET$PARTIONDIRECTORY=$nextDay $EXTRA_DISTCP_OPTIONS
+		# GCP incremental copy command
+		echo "Source: " $SOURCE$PARTIONDIRECTORY$nextDay 
+		echo "Target: " $TARGET$PARTIONDIRECTORY$nextDay 
+		echo "Additional options: " $EXTRA_DISTCP_OPTIONS
+
+		#gsutil cp $SOURCE$PARTIONDIRECTORY=$nextDay $TARGET$PARTIONDIRECTORY=$nextDay $EXTRA_DISTCP_OPTIONS
 	fi
 
 done

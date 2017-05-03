@@ -12,12 +12,21 @@ if [ $CLOUD_TYPE == "AWS" ]; then
     aws_authentication $AWS_CONF_FILE
 
     # AWS bulk copy command
-	echo $SOURCE $TARGET $EXTRA_DISTCP_OPTIONS
+    echo "Source: " $SOURCE
+	echo "Target: " $TARGET
+	echo "Additional options: " $EXTRA_DISTCP_OPTIONS
+	
+	#aws s3 cp $SOURCE $TARGET $EXTRA_DISTCP_OPTIONS
+  
 
 elif [ $CLOUD_TYPE == "GCP" ]; then
 	echo "It's for GCP Storage.."
 
 	# GCP bulk copy command
-	echo $SOURCE $TARGET $EXTRA_DISTCP_OPTIONS
+	echo "Source: " $SOURCE
+	echo "Target: " $TARGET
+	echo "Additional options: " $EXTRA_DISTCP_OPTIONS
+	
+	#gsutil cp $SOURCE $TARGET $EXTRA_DISTCP_OPTIONS
 fi
 
