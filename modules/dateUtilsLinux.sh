@@ -14,5 +14,6 @@ daysOffset () {
 
 stepForNextDay () {
 	local offSet=$1
-	printf %s $(date -u +%Y$2%m$2%d -d "$DATE + $1 day")
+	local dateSeparator=$2
+	printf %s $(date -u +%Y$dateSeparator%m$dateSeparator%d -d "$DATE + $1 day")
 }

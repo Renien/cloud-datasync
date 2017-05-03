@@ -14,6 +14,7 @@ daysOffset () {
 
 stepForNextDay () {
 	local offSet=$1
-	echo $(date -v"${offSet}d" "+%Y%m%d")
+	local dateSeparator=$2
+	echo $(date -v"${offSet}d" "+%Y$dateSeparator%m$dateSeparator%d")
 }
 
