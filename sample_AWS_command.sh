@@ -31,6 +31,6 @@
 # 	AWS_CONF_FILE=/Users/renienj/open-source-projects/cloud-datasync/modules/conf/aws-conf.properties \
 # 	scripts_root=/Users/renienj/open-source-projects/cloud-datasync/modules \
 # 	IS_INCREMENTAL=false \
-#   SOURCE=/your-source-dir/ \
-#   TARGET=s3://aws-s3-bucket-dir/ \
-#   PARTIONDIRECTORY=date
+#   	SOURCE=/your-source-dir/ \
+#   	TARGET=s3://aws-s3-bucket-dir/ \
+#   	PARTIONDIRECTORY=date
