@@ -26,6 +26,8 @@ The cloud-datasync tool currently supports to copy data to GCP/AWS cloud data st
 If you want to share any new features/issues, feel free to open an issue in the GitHub repository.
 
 ## Directory Layout
+
+```
 .
 ├── LICENSE
 ├── README.md
@@ -49,6 +51,7 @@ If you want to share any new features/issues, feel free to open an issue in the 
     ├── datePatternValidationTest.sh
     ├── dateUtilsLinuxTest.sh
     └── dateUtilsMacTest.sh
+```
 
 ## License
 MIT © [Renien](https://twitter.com/RenienJoseph)
