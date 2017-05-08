@@ -16,7 +16,7 @@ if [ $CLOUD_TYPE == "AWS" ]; then
 	echo "Target: " $TARGET
 	echo "Additional options: " $EXTRA_DISTCP_OPTIONS
 	
-	#aws s3 cp $SOURCE $TARGET $EXTRA_DISTCP_OPTIONS
+	aws s3 cp $SOURCE $TARGET $EXTRA_DISTCP_OPTIONS
   
 
 elif [ $CLOUD_TYPE == "GCP" ]; then
@@ -27,6 +27,6 @@ elif [ $CLOUD_TYPE == "GCP" ]; then
 	echo "Target: " $TARGET
 	echo "Additional options: " $EXTRA_DISTCP_OPTIONS
 	
-	#gsutil cp $SOURCE $TARGET $EXTRA_DISTCP_OPTIONS
+	gsutil cp $SOURCE $TARGET $EXTRA_DISTCP_OPTIONS
 fi
 

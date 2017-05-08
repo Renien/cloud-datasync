@@ -31,7 +31,7 @@ for ((i = startOffSet; i <= endOffSet; i++)) do
 		echo "Target: " $TARGET$PARTIONDIRECTORY$nextDay 
 		echo "Additional options: " $EXTRA_DISTCP_OPTIONS
 
-		#aws s3 cp $SOURCE$PARTIONDIRECTORY=$nextDay $TARGET$PARTIONDIRECTORY=$nextDay $EXTRA_DISTCP_OPTIONS
+		aws s3 cp $SOURCE$PARTIONDIRECTORY=$nextDay $TARGET$PARTIONDIRECTORY=$nextDay $EXTRA_DISTCP_OPTIONS
   
 	elif [ $CLOUD_TYPE == "GCP" ]; then
 
@@ -40,7 +40,7 @@ for ((i = startOffSet; i <= endOffSet; i++)) do
 		echo "Target: " $TARGET$PARTIONDIRECTORY$nextDay 
 		echo "Additional options: " $EXTRA_DISTCP_OPTIONS
 
-		#gsutil cp $SOURCE$PARTIONDIRECTORY=$nextDay $TARGET$PARTIONDIRECTORY=$nextDay $EXTRA_DISTCP_OPTIONS
+		gsutil cp $SOURCE$PARTIONDIRECTORY=$nextDay $TARGET$PARTIONDIRECTORY=$nextDay $EXTRA_DISTCP_OPTIONS
 	fi
 
 done
