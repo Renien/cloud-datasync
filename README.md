@@ -34,7 +34,7 @@ If you want to share any new features/issues, feel free to open an issue in the 
 ├── doc
 │   └── blob
 │       └── cloud-data-sync.png
-├── modules												--> module folder
+├── modules                                             --> module folder
 │   ├── authentication.sh
 │   ├── conf                                            --> configurations for data sync tool
 │   │   └── aws-conf.properties                         --> sample access and secret keys for AWS 
