@@ -21,7 +21,7 @@ Cloud data sync tool will be very useful during the migration process to move al
 
 The cloud-datasync tool currently supports to copy data to GCP/AWS cloud data storage from any local linux/mac machines. These are new features I have planned for the tool,
 -	Using ‘distcp’ command effectively copy the data from local HDFS cluster to any cloud service 
--	Automatically generate Azkaban job flow and schedule the data copy jobs in Azkaban servers. We can use [Azkaban Python Package](https://pypi.python.org/pypi/azkaban/0.6.43) to implement the this feature.
+-	Automatically generate Azkaban job flow and schedule the data copy jobs in Azkaban servers. We can use [Azkaban Python Package](https://pypi.python.org/pypi/azkaban/0.6.43) to implement this feature.
 
 If you want to share any new features/issues, feel free to open an issue in the GitHub repository.
 
@@ -34,7 +34,7 @@ If you want to share any new features/issues, feel free to open an issue in the 
 ├── doc
 │   └── blob
 │       └── cloud-data-sync.png
-├── modules												--> module folder
+├── modules                                             --> module folder
 │   ├── authentication.sh
 │   ├── conf                                            --> configurations for data sync tool
 │   │   └── aws-conf.properties                         --> sample access and secret keys for AWS 
